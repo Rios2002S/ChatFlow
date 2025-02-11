@@ -1,0 +1,180 @@
+/* Base de estilos */
+.infor {
+    text-align: right;
+    color: #e5e5e5;  /* Gris claro para contraste suave */
+    font-family: "Protest Guerrilla", sans-serif;
+}
+body {
+    background-color: #1e1e1e;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #e5e5e5;
+}
+
+/* Navbar fijo con sombra y transición */
+.fijo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    transition: top 0.3s;
+    background-color: black;
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.5);
+    color: white;
+}
+
+/* Imagen de usuario */
+.user-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid red;
+    transition: transform 0.3s ease-in-out;
+}
+
+.user-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Nombre de usuario */
+.username {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+}
+
+/* Título con fuente llamativa */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+}
+
+/* 🎨 Menú lateral con efecto desenfoque */
+#sideMenu {
+    height: 100vh;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(https://i.pinimg.com/736x/88/74/5f/88745fa59b4ca03de317e2202bbd7ed8.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+    padding-top: 60px;
+    z-index: 1050;
+    color: white;
+    border-right: 2px solid red;
+}
+
+/* Enlaces del menú lateral */
+#sideMenu a {
+    display: block;
+    padding: 15px;
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+#sideMenu a:hover {
+    background-color: rgb(82, 3, 3);
+    color: white;
+}
+
+/* Contenido principal */
+#mainContent {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    background-color: #444;
+    opacity: 0;
+    display: block;
+    visibility: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    color: #f1f1f1;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgb(102, 5, 5);
+    color: white;
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Menú lateral para dispositivos pequeños */
+    #sideMenu {
+        width: 100%;
+        height: auto;
+        position: relative;
+        backdrop-filter: none;
+    }
+
+    #sideMenu a {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Contenido principal */
+    #mainContent {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    /* Imagen de usuario */
+    .user-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Nombre de usuario */
+    .username {
+        font-size: 18px;
+    }
+
+    /* Título */
+    h1 {
+        font-size: 22px;
+    }
+}
+
+/* Estilo para dispositivos muy pequeños (móviles) */
+@media (max-width: 480px) {
+    /* Reduce aún más el tamaño de la fuente y los márgenes */
+    .username {
+        font-size: 16px;
+    }
+
+    .user-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+}

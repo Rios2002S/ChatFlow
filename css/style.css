@@ -1,0 +1,166 @@
+.chat-container {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: rgb(122, 66, 66);
+}
+
+/* 📜 Lista de usuarios */
+.user-list {
+    width: 30%;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.user-list h3 {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-list li:hover {
+    background-color: rgb(80, 78, 78);
+}
+
+.user-list li i {
+    margin-right: 10px;
+    color: rgb(251, 251, 252);
+}
+
+/* 💬 Chat principal */
+.chat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: black;
+}
+
+/* 📩 Área de mensajes */
+#mensajesRecibidos {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* 💬 Burbujas de mensajes */
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message-right {
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message-left {
+    background-color: #f3da0b;
+    color: black;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* ⏳ Hora del mensaje */
+.message-time {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* 📩 Campo de mensaje */
+.message-input {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+#mensaje {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    resize: none;
+    outline: none;
+    background: #f0f0f0;
+}
+
+#enviarMensaje {
+    background: rgb(63, 13, 1);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#enviarMensaje i {
+    font-size: 1.2em;
+}
+
+.user-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+    }
+
+    .user-list {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .chat-box {
+        width: 100%;
+        height: 100px;
+    }
+
+    .message-input {
+        flex-direction: column;
+    }
+
+    #mensaje {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #enviarMensaje {
+        width: 100%;
+        margin-left: 0;
+    }
+}
