@@ -14,11 +14,6 @@
                             <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="Contraseña" required>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="clave_admin" class="form-label">Clave de administrador</label>
-                            <input type="password" name="clave_admin" id="clave_admin" class="form-control" placeholder="Clave de administrador" required>
-                        </div>
-
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-primary">Registrar</button>
                             <button type="reset" class="btn btn-secondary">Limpiar</button>

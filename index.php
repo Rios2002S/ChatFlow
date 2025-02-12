@@ -59,7 +59,7 @@
 			letter-spacing: 2px; /* Espaciado entre letras */
 			text-transform: uppercase; /* Todo en mayúsculas */
 		}
-    </style>
+	</style>
 </head>
 <body>
 
@@ -68,7 +68,7 @@
     <h5 class="text-center">Iniciar Sesión</h5>
     <form action="bd/verifyuser.php" method="POST">
         <div class="mb-3">
-            <label>Usuarios</label>
+            <label>Usuario</label>
             <input type="text" name="nombreusu" class="form-control" required>
         </div>
         <div class="mb-3">

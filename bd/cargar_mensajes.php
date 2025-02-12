@@ -23,7 +23,7 @@ $stmt_update->bind_param("ii", $destinatario_id, $remitente_id);
 $stmt_update->execute();
 
 // 🔹 2. Obtener los mensajes entre ambos usuarios
-$query = "SELECT m.mensaje, m.fecha_envio, u.nombreusu AS remitente, m.remitente_id
+$query = "SELECT m.mensaje, m.fecha_envio, m.leido, u.nombreusu AS remitente, m.remitente_id
           FROM mensajes m
           JOIN usuarios u ON m.remitente_id = u.id_usuario
           WHERE (m.remitente_id = ? AND m.destinatario_id = ?)
@@ -41,8 +41,9 @@ while ($row = $result->fetch_assoc()) {
         'mensaje' => htmlspecialchars($row['mensaje']),
         'fecha_envio' => $row['fecha_envio'],
         'remitente' => htmlspecialchars($row['remitente']),
-        'es_mio' => ($row['remitente_id'] == $remitente_id) // Indica si el mensaje es del usuario actual
-    ];
+        'es_mio' => ($row['remitente_id'] == $remitente_id), // Indica si el mensaje es del usuario actual
+        'leido' => $row['leido'] // ✅ Agregamos el estado de lectura
+    ];    
 }
 
 // 🔹 3. Devolver los mensajes como JSON

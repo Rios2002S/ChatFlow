@@ -11,7 +11,7 @@ if (!isset($_SESSION['id_usuario'])) {
 $usuario_id = $_SESSION['id_usuario']; // Obtener el ID del usuario logueado
 
 // Obtener solicitudes pendientes
-$query = "SELECT u.id_usuario, u.nombre 
+$query = "SELECT u.id_usuario, u.nombre, u.foto 
           FROM usuarios u
           JOIN solicitudes s ON u.id_usuario = s.remitente_id
           WHERE s.destinatario_id = ? AND s.estado = 'pendiente'"; // Solicitudes pendientes del usuario

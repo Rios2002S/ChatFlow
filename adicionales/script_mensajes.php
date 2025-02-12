@@ -72,7 +72,14 @@
                     response.mensajes.forEach(m => {
                         mensajesHtml += `<div class="message ${m.es_mio ? 'message-right' : 'message-left'}">
                                             <p>${m.mensaje}</p>
-                                            <span class="message-time">${m.fecha_envio}</span>
+                                            <div class="d-flex align-items-center">
+                                                <span class="message-time">${m.fecha_envio}</span>
+                                                ${m.es_mio ? `
+                                                    <span class="message-status">
+                                                        ${m.leido == 0 ? '<i class="fas fa-check text-white"></i>' : '<i class="fas fa-check-double text-primary"></i>'}
+                                                    </span>
+                                                ` : ''}
+                                            </div>
                                         </div>`;
                     });
 
